@@ -1,0 +1,2752 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGA Food - Navigation Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            box-sizing: border-box;
+            font-size: 62.5%;
+            height: 100%;
+        }
+        
+        :root {
+            --font-body-family: 'Roboto', sans-serif;
+            --font-body-weight: 400;
+            --font-headings-family: 'Roboto', sans-serif;
+            --font-headings-weight: 700;
+            --font-size-h1: 4.8rem;
+            --color-foreground: #212121;
+            --color-background: #FFFFFF;
+            --color-background-body: #f4f1ea;
+            --color-primary: #eb0029;
+            --color-secondary: #fc791a;
+            --color-link: #fc791a;
+            --color-neutral-50: #EBEBEB;
+            --color-neutral-100: #BFBFBF;
+            --color-neutral-200: #999999;
+            --color-neutral-300: #666666;
+            --color-neutral-400: #464646;
+            --color-label: var(--color-neutral-200);
+            --color-price: #ff3c02;
+            --color-price-compare: #929292;
+            --color-sale-bg: #ee1926;
+            --color-sale: #ffffff;
+            --color-addtocart: #ffffff;
+            --color-addtocart-bg: #ff3c02;
+            --color-coupon-primary: #eb0029;
+            --color-coupon-secondary: #212121;
+            --color-error: #EE1926;
+            --color-success: #2BAD14;
+            --color-warning: #F2BC1B;
+            --color-header: var(--color-foreground);
+            --color-header-bg: var(--color-background);
+            --header-height: 8.4rem;
+            --logo-width: 20.4rem;
+            --color-cart-bubble: #FFFFFF;
+            --color-cart-bubble-bg: #EE1926;
+            --color-search: var(--color-primary);
+            --font-size-body: 1.6rem;
+            --spacing-2: 0.8rem;
+            --spacing-3: 1.2rem;
+            --spacing-4: 1.6rem;
+            --spacing-5: 2rem;
+            --rounded-full: 9999px;
+            --container-padding: 1.2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body-family);
+            font-weight: var(--font-body-weight);
+            font-size: var(--font-size-body);
+            line-height: 1.43;
+            color: var(--color-foreground);
+            background-color: var(--color-background-body);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+       
+    </style>
+</head>
+<body class="ega-theme index">
+
+    <header class="header relative flex items-center justify-center top-0 py-4-5 h-max max-w-full overflow-x-clip">
+        <div class="container mx-auto relative">
+            <div class="header-wrapper flex items-center justify-between gap-3 lg:grid lg:gap-2 lg:grid-cols-[auto_60%_auto] flex-wrap">
+
+                <div class="flex items-center gap-5">
+                    <div class="flex gap-2 lg:gap-0 items-center">
+                        <div class="menu-opener lg:hidden">
+                            <button type="button" id="toggle-menu-mobile" class="w-10 h-10 border border-gray-200 rounded-full flex flex-col justify-center items-center gap-1 hover:bg-gray-50">
+                                <span class="h-[2px] w-5 bg-gray-600"></span>
+                                <span class="h-[2px] w-5 bg-gray-600"></span>
+                                <span class="h-[2px] w-5 bg-gray-600"></span>
+                            </button>
+                        </div>
+                        <a href="/" class="logo-wrapper mx-auto block" title="EGA Food">
+                            <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/logo.png?1758547585919" alt="logo EGA Food" class="h-14 md:h-15 w-full object-contain">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mx-auto header-nav dnone lg:block order-1 lg:order-none">
+                    <div class="mx-auto md:px-5">
+                        <div class="navigation--horizontal dnone lg:flex items-center">
+                            <div class="navigation-horizontal-wrapper overflow-hidden overflow-menu">
+                                <nav>
+                                    <ul class="navigation-horizontal">
+                                        <li class="menu-item group">
+                                            <a class="menu-item__link link flex items-center gap-2 font-semibold" title="Đặt hàng nhanh" href="/dat-hang-nhanh">
+                                                <span>Đặt hàng nhanh</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item group">
+                                            <a class="menu-item__link link flex items-center gap-2 font-semibold " title="Menu" href="/menu">
+                                                <span>Menu</span>
+                                                <i class="icon icon-carret-down"></i>
+                                            </a>
+                                            <div class="submenu mega-menu bg-white">
+                                                <div class="container">
+                                                    <ul class="submenu__list">
+                                                        <li class="submenu__col">
+                                                            <span class="submenu__item submenu__item--main">
+                                                                <a class="link font-semibold" title="Các món gà" href="/">Các món gà</a>
+                                                            </span>
+                                                            <ul>
+                                                                <li class="submenu__item"><a class="link" href="#">Gà rán</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Gà quay</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Combo</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="submenu__col">
+                                                            <span class="submenu__item submenu__item--main">
+                                                                <a class="link font-semibold" title="Pizza" href="/">Pizza</a>
+                                                            </span>
+                                                            <ul>
+                                                                <li class="submenu__item"><a class="link" href="#">Pizza truyền thống</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Pizza đặc biệt</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Pizza cỡ lớn</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="submenu__col">
+                                                            <span class="submenu__item submenu__item--main">
+                                                                <a class="link font-semibold" title="Burger" href="/">Burger</a>
+                                                            </span>
+                                                            <ul>
+                                                                <li class="submenu__item"><a class="link" href="#">Burger bò</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Burger gà</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Burger chay</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Burger cá</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="submenu__col">
+                                                            <span class="submenu__item submenu__item--main">
+                                                                <a class="link font-semibold" title="Mì ý" href="/">Mì ý</a>
+                                                            </span>
+                                                            <ul>
+                                                                <li class="submenu__item"><a class="link" href="#">Mì Ý sốt bò băm</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Mì Ý sốt kem nấm</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Mì Ý hải sản</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Mì Ý chay</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="submenu__col">
+                                                            <span class="submenu__item submenu__item--main">
+                                                                <a class="link font-semibold" title="Cơm" href="/">Cơm</a>
+                                                            </span>
+                                                            <ul>
+                                                                <li class="submenu__item"><a class="link" href="#">Cơm gà xối mỡ</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Cơm gà chiên nước mắm</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Cơm chiên hải sản</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Cơm chiên dương châu</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="submenu__col">
+                                                            <span class="submenu__item submenu__item--main">
+                                                                <a class="link font-semibold" title="Các món ăn kèm" href="/">Các món ăn kèm</a>
+                                                            </span>
+                                                            <ul>
+                                                                <li class="submenu__item"><a class="link" href="#">Khoai tây chiên</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Khoai tây nghiền</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Salad</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="submenu__col">
+                                                            <span class="submenu__item submenu__item--main">
+                                                                <a class="link font-semibold" title="Bánh" href="/">Bánh</a>
+                                                            </span>
+                                                            <ul>
+                                                                <li class="submenu__item"><a class="link" href="#">Bánh su kem</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Bánh Donut</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="submenu__col">
+                                                            <span class="submenu__item submenu__item--main">
+                                                                <a class="link font-semibold" title="Thức uống" href="/">Thức uống</a>
+                                                            </span>
+                                                            <ul>
+                                                                <li class="submenu__item"><a class="link" href="#">Nước ngọt</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Nước ép trái cây</a></li>
+                                                                <li class="submenu__item"><a class="link" href="#">Bia</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item group">
+                                            <a class="menu-item__link link flex items-center gap-2 font-semibold" title="Chương trình khuyến mãi" href="/">
+                                                <span>Chương trình khuyến mãi</span>
+                                                <i class="icon icon-carret-down"></i>
+                                            </a>
+                                            <div class="submenu mega-menu bg-white">
+                                                <div class="container">
+                                                    <ul class="submenu__list">
+                                                        <li class="submenu__col">
+                                                            <span class="submenu__item submenu__item--main">
+                                                                <a class="link font-semibold" title="Flashsale 1 khung giờ" href="/">Flashsale 1 khung giờ</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="submenu__col">
+                                                            <span class="submenu__item submenu__item--main">
+                                                                <a class="link font-semibold" title="Flashsale nhiều khung giờ" href="/">Flashsale nhiều khung giờ</a>
+                                                            </span>
+                                                        </li>
+                                                        </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item group">
+                                            <a class="menu-item__link link flex items-center gap-2 font-semibold" title="Đặt bàn" href="/dat-ban">
+                                                <span>Đặt bàn</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item group">
+                                            <a class="menu-item__link link flex items-center gap-2 font-semibold" title="Tin tức" href="/tin-tuc">
+                                                <span>Tin tức</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item group">
+                                            <a class="menu-item__link link flex items-center gap-2 font-semibold" title="Giới thiệu" href="/gioi-thieu">
+                                                <span>Giới thiệu</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item group">
+                                            <a class="menu-item__link link flex items-center gap-2 font-semibold" title="Liên hệ" href="/lien-he">
+                                                <span>Liên hệ</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item group">
+                                            <a class="menu-item__link link flex items-center gap-2 font-semibold" title="Hướng dẫn thiết lập" href="/huong-dan-thiet-lap">
+                                                <span>Hướng dẫn thiết lập</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="navigation-arrows">
+                                <button id="scrollLeft" disabled>‹</button>
+                                <button id="scrollRight">›</button>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-icon-wrapper flex items-center justify-end gap-2 xl:gap-7">
+                    <div id="desktop-lang" class="hidden xl:flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/32px-Flag_of_Vietnam.svg.png" alt="VN" class="w-15 border border-gray-200">
+                        <i class="fa-solid fa-chevron-down text-gray-400 text-[10px]"></i>
+                    </div>
+                    <div class="header-box-live mr-1 lg:mr-0 hidden md:block">
+                        <button class="flex items-center gap-2 border border-red-500 text-red-600 px-3 py-1 rounded-sm hover:scale-105 transition-transform bg-white" style="border-radius: 5px">
+                            <span class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                            </span>
+                            <span class=" text-[14px] tracking-wide">LIVE</span>
+                        </button>
+                    </div>
+                    <a href="/search" class="header-icon-group flex gap-2 items-center hover:scale-110 active:scale-95 transition-all">
+                        <div class="header-icon hover:bg-gray-100">
+                            <i class="fa-solid fa-magnifying-glass text-3xl text-gray-600"></i>
+                        </div>
+                    </a>
+                    <a href="/account/login" class="header-icon-group hidden md:flex gap-2 items-center hover:scale-110 active:scale-95 transition-all">
+                        <div class="header-icon hover:bg-gray-100">
+                            <i class="fa-regular fa-user text-3xl text-gray-600"></i>
+                        </div>
+                    </a>
+                    <a href="/cart" class="header-icon-group flex gap-2 items-center hover:bg-gray-50 rounded-lg p-1 pr-2 transition-all">
+                        <div class="header-icon relative bg-gray-50">
+                            <i class="fa-solid fa-basket-shopping text-3xl text-gray-600"></i>
+                            <span class="cart-count absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">0</span>
+                        </div>
+                        <div class="hidden md:block leading-tight text-left">
+                            <span class="text-2xl font-sbold text-black block">Giỏ hàng</span>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+<main>
+    <div style=" text-align: center; color: #999; overflow: hidden; margin-bottom: 60px;">
+    <div class="banner-wrapper" style="max-width: 100%; margin: 0 auto; position: relative;">
+        
+        <button onclick="moveSlide(-1)" class="nav-btn prev-btn">‹</button>
+
+        <div id="banner-track" style="display: flex; width: 100%; will-change: transform;">
+            
+            <a href="/" style="min-width: 100%; display: block;">
+                <img src="https://bizweb.dktcdn.net/100/559/903/themes/1004156/assets/home_slider_1.jpg?1758547585919" 
+                     style="width: 100%; height: auto; display: block;">
+            </a>
+
+            <a href="/" style="min-width: 100%; display: block;">
+                <img src="https://bizweb.dktcdn.net/100/559/903/themes/1004156/assets/home_slider_2.jpg?1758547585919" 
+                     style="width: 100%; height: auto; display: block;">
+            </a>
+
+            <a href="/" style="min-width: 100%; display: block;">
+                <img src="https://bizweb.dktcdn.net/100/559/903/themes/1004156/assets/home_slider_1.jpg?1758547585919" 
+                     style="width: 100%; height: auto; display: block;">
+            </a>
+
+            <a href="/" style="min-width: 100%; display: block;">
+                <img src="https://bizweb.dktcdn.net/100/559/903/themes/1004156/assets/home_slider_2.jpg?1758547585919" 
+                     style="width: 100%; height: auto; display: block;">
+            </a>
+
+        </div>
+
+        <button onclick="moveSlide(1)" class="nav-btn next-btn">›</button>
+
+    </div>
+</div>
+    <section class="section  section-collection-list relative" style="--section-padding: 0;--section-margin: 64px 0 64px;--section-padding-mb: 0;--section-margin-mb: 32px 0 32px; color: var(--color-foreground); --color-collection-item: transparent;	
+    --grid-col-desktop:repeat(auto-fit, minmax(calc(100% / 7 - 1px ), 1fr));	--grid-col-mobile:repeat(3,1fr); ">
+    <div class="container overflow-hidden md:px-container relative z-[1]">
+        <div class="section-card">
+            <div class="heading-bar ">
+                <h2 class=" heading w-auto font-semibold mx-auto text-center " >Lựa chọn thực đơn</h2>
+            </div>
+            <carousel-slider>
+    <div class="embla__viewport">
+        <div class="embla__container">
+            
+            <div class="embla__slide">
+                <a href="/collections/ga-ran" class="collection-item">
+                    <div class="thumb-wrapper">
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/559/903/themes/1004156/assets/coll_1.png?1758547585919" alt="Gà rán">
+                    </div>
+                    <span class="title">Gà rán</span>
+                </a>
+            </div>
+
+            <div class="embla__slide">
+                <a href="/collections/mi-y" class="collection-item">
+                    <div class="thumb-wrapper">
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/559/903/themes/1004156/assets/coll_2.png?1758547585919" alt="Mì Ý">
+                    </div>
+                    <span class="title">Mì Ý</span>
+                </a>
+            </div>
+
+            <div class="embla__slide">
+                <a href="/collections/pizza" class="collection-item">
+                    <div class="thumb-wrapper">
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/559/903/themes/1004156/assets/coll_3.png?1758547585919" alt="Pizza">
+                    </div>
+                    <span class="title">Pizza</span>
+                </a>
+            </div>
+
+            <div class="embla__slide">
+                <a href="/collections/com" class="collection-item">
+                    <div class="thumb-wrapper">
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/559/903/themes/1004156/assets/coll_4.png?1758547585919" alt="Cơm">
+                    </div>
+                    <span class="title">Cơm</span>
+                </a>
+            </div>
+
+            <div class="embla__slide">
+                <a href="/collections/salad" class="collection-item">
+                    <div class="thumb-wrapper">
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/559/903/themes/1004156/assets/coll_5.png?1758547585919" alt="Salad">
+                    </div>
+                    <span class="title">Salad</span>
+                </a>
+            </div>
+
+            <div class="embla__slide">
+                <a href="/collections/banh" class="collection-item">
+                    <div class="thumb-wrapper">
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/559/903/themes/1004156/assets/coll_6.png?1758547585919" alt="Bánh">
+                    </div>
+                    <span class="title">Bánh</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    
+</carousel-slider>
+        </div>
+    </div>
+    </section>
+
+<section class="section-coupons">
+  <div class="container">
+    
+    <div class="coupon-grid-wrapper">
+        
+        <div class="coupon-list-grid">
+            
+            <div class="coupon-item-card">
+                <div class="coupon-left">
+                    <span class="code-text">EGA15</span>
+                    <div class="dashed-line"></div>
+                </div>
+                <div class="coupon-right">
+                    <div class="coupon-info">
+                        <p class="desc">Giảm 15% cho đơn hàng từ 500K.</p>
+                        <button class="view-cond">ⓘ Điều kiện</button>
+                    </div>
+                    <div class="coupon-action">
+                        <span class="expiry" style="font-size: 11px;" >HSD: 28/03/2025</span>
+                         <button class="btn-coupon disabled">Hết hạn</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coupon-item-card">
+                <div class="coupon-left">
+                    <span class="code-text">EGA30</span>
+                    <div class="dashed-line"></div>
+                </div>
+                <div class="coupon-right">
+                    <div class="coupon-info">
+                        <p class="desc">Giảm 30% cho đơn hàng từ 1500K.</p>
+                        <button class="view-cond">ⓘ Điều kiện</button>
+                        
+                    </div>
+                    <div class="coupon-action">
+                        <span class="expiry" style="font-size: 11px;">HSD: 20/03/2025</span>
+                         <button class="btn-coupon disabled">Hết hạn</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coupon-item-card">
+                <div class="coupon-left">
+                    <span class="code-text">FSHIP</span>
+                    <div class="dashed-line"></div>
+                </div>
+                <div class="coupon-right">
+                    <div class="coupon-info">
+                        <p class="desc">Freeship đơn hàng trên 200K</p>
+                        <button class="view-cond">ⓘ Điều kiện</button>
+                        
+                    </div>
+                    <div class="coupon-action">
+                        <span class="expiry" style="font-size: 11px;">HSD: 30/12/2025</span>
+                         <button class="btn-coupon disabled">Hết hạn</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coupon-item-card">
+                <div class="coupon-left active-bg">
+                    <span class="code-text">EGA50</span>
+                    <div class="dashed-line"></div>
+                </div>
+                <div class="coupon-right">
+                    <div class="coupon-info">
+                        <p class="desc">Giảm 50% đơn từ 10 triệu.</p>
+                        <button class="view-cond">ⓘ Điều kiện</button>
+                    </div>
+                    <div class="coupon-action">
+                        <span class="expiry" style="font-size: 11px;">HSD: 30/03/2026</span>
+                         <button class="btn-coupon btn-copy" data-code="EGA50">Sao chép</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLASH SALE SECTION ===== -->
+<section class="flashsale-section">
+    <div class="container overflow-hidden md:px-container relative z-[1]">
+        <div class=" overflow-hidden section-card" style="background: #ffffff;">
+
+        
+        <div class="flashsale-header">
+            <div class="flashsale-header-left">
+                <div class="flash-icon">⚡</div>
+                <h2 class="flashsale-title">Khuyến mãi Online</h2>
+            </div>
+            <div class="countdown-wrapper">
+                <span class="countdown-label">Kết thúc sau</span>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours">14</span>
+                        
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes">30</span>
+                        
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds">09</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashsale-products">
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-1-9e807c8a-33f3-4edd-8d64-7195959a2e7d-998c4395-2ef2-4dd2-b33c-f1662989342e-4599d2cc-1809-4293-a7e9-155ad27a070f.jpg?v=1742375320697" alt="Gà Rán" class="product-image">
+                        <div class="product-utilities">
+                            <button class="utility-btn" title="Xem nhanh">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                <span class="tooltip">Xem nhanh</span>
+                            </button>
+                            <button class="utility-btn" title="So sánh">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                                </svg>
+                                <span class="tooltip">So sánh</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Gà Rán (4 Miếng)</h3>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="price-wrapper">
+                            <span class="product-price">129.000₫</span>
+                        </div>
+                        <div class="stock-progress">
+                            <div class="stock-label">🔥 Vừa mở bán</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 5%"></div>
+                            </div>
+                        </div>
+                        <button class="action-button btn-options">
+                            Tuỳ chọn ⚙️
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <span class="discount-badge">-22%</span>
+                        <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-3-7908cd6a-7ae2-44bf-8064-24e41506895d-2e15fa87-0ad3-4cd5-b208-db184be0c7b8.jpg?v=1742360902203" alt="Burger Zinger" class="product-image">
+                        <div class="product-utilities">
+                            <button class="utility-btn" title="Xem nhanh">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                <span class="tooltip">Xem nhanh</span>
+                            </button>
+                            <button class="utility-btn" title="So sánh">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                                </svg>
+                                <span class="tooltip">So sánh</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Burger Zinger (1 Phần)</h3>
+                        <div class="stars">
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                        <div class="price-wrapper">
+                            <span class="product-price">51.000₫</span>
+                            <span class="original-price">65.000₫</span>
+                        </div>
+                        <div class="stock-progress">
+                            <div class="stock-label">🔥 Vừa mở bán</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 5%"></div>
+                            </div>
+                        </div>
+                        <button class="action-button btn-order">
+                            Đặt ngay 🛒
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <span class="discount-badge">-22%</span>
+                        <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-2-cd4df5fe-b2df-499c-9f3b-4044af4d7365-6bc974a4-78c7-4dfe-a3c4-a76f9b86d825.jpg?v=1742360901280" alt="Burger Gà Quay" class="product-image">
+                        <div class="product-utilities">
+                            <button class="utility-btn" title="Xem nhanh">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                <span class="tooltip">Xem nhanh</span>
+                            </button>
+                            <button class="utility-btn" title="So sánh">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                                </svg>
+                                <span class="tooltip">So sánh</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Burger Gà Quay Flava (1 Phần)</h3>
+                        <div class="stars">
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                        <div class="price-wrapper">
+                            <span class="product-price">47.000₫</span>
+                            <span class="original-price">60.000₫</span>
+                        </div>
+                        <div class="stock-progress">
+                            <div class="stock-label">🔥 Vừa mở bán</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 5%"></div>
+                            </div>
+                        </div>
+                        <button class="action-button btn-order">
+                            Đặt ngay 🛒
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <span class="discount-badge">-16%</span>
+                        <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-1-e343dbd4-2dae-4dc3-99da-a9b388809ab3.jpg?v=1742360900393" alt="Burger Tôm" class="product-image">
+                        <div class="product-utilities">
+                            <button class="utility-btn" title="Xem nhanh">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                <span class="tooltip">Xem nhanh</span>
+                            </button>
+                            <button class="utility-btn" title="So sánh">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                                </svg>
+                                <span class="tooltip">So sánh</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Burger Tôm (1 Phần)</h3>
+                        <div class="stars">
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                        <div class="price-wrapper">
+                            <span class="product-price">42.000₫</span>
+                            <span class="original-price">50.000₫</span>
+                        </div>
+                        <div class="stock-progress">
+                            <div class="stock-label">🔥 Vừa mở bán</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 5%"></div>
+                            </div>
+                        </div>
+                        <button class="action-button btn-order">
+                            Đặt ngay 🛒
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container" style="padding: 4rem 0; text-align: center; color: #999;">
+        <a href="/" style="min-width: 100%;">
+            <img src="https://bizweb.dktcdn.net/100/559/903/themes/1004156/assets/banner_image.jpg?1758547585919" alt="EGA Food" style="height: 364px; margin: 0 auto;">
+        </a>
+    </div>
+</section>
+
+<!-- ===== PRODUCT TABS SECTION ===== -->
+<section class="section section-product-tabs">
+  <div class="container">
+    <div class="section-card">
+      <div class="section-header">
+        <h2 class="section-title">Gợi ý cho bạn</h2>
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="ga-ran">Gà rán</button>
+          <button class="tab-btn" data-tab="burger">Burger</button>
+          <button class="tab-btn" data-tab="pizza">Pizza</button>
+        </div>
+      </div>
+
+      <!-- Tab Gà Rán -->
+      <div class="tab-content active" id="ga-ran">
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-1-9e807c8a-33f3-4edd-8d64-7195959a2e7d-998c4395-2ef2-4dd2-b33c-f1662989342e-4599d2cc-1809-4293-a7e9-155ad27a070f.jpg?v=1742375320697" alt="Gà Rán 4 Miếng" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Gà Rán (4 Miếng)</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="product-price">129.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Tuỳ chọn</span>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-1-9e807c8a-33f3-4edd-8d64-7195959a2e7d-998c4395-2ef2-4dd2-b33c-f1662989342e-4599d2cc-1809-4293-a7e9-155ad27a070f.jpg?v=1742375320697" alt="Gà Rán 2 Miếng" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Gà Rán (2 Miếng)</div>
+              <div class="stars">
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">69.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Tuỳ chọn</span>
+            </div>
+          </div>
+
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/g-gi-n-vui-v-6-7-2-1.png?v=1742375969220" alt="Gà Rán 2 Miếng" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Gà Rán (2 Miếng)</div>
+              <div class="stars">
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">69.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Tuỳ chọn</span>
+            </div>
+          </div>
+<div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-7c190319-25f2-4d0a-b1bf-411fc2f8a890.jpg?v=1742360880700" alt="Gà Rán 2 Miếng" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Gà Rán (2 Miếng)</div>
+              <div class="stars">
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">69.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Tuỳ chọn</span>
+            </div>
+          </div>
+<div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-2-a06bd9c4-d448-4cfe-830d-d34ac991e953-445f8346-2277-426a-acb2-5ef6719aa72d.jpg?v=1742375756883" alt="Gà Rán 2 Miếng" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Gà Rán (2 Miếng)</div>
+              <div class="stars">
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">69.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+<div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-f3a808d8-3bbc-4f68-8c8d-724324938fb8-887366c4-163b-4906-aa67-198e34989b26.jpg?v=1742375734267" alt="Gà Rán 2 Miếng" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Gà Rán (2 Miếng)</div>
+              <div class="stars">
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">69.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+<div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-5-306f4d73-794f-41d6-8fb9-71606de256b0-be3ddd0e-044b-49bc-b51c-57331fa86248.jpg?v=1742375695313" alt="Gà Rán 2 Miếng" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Gà Rán (2 Miếng)</div>
+              <div class="stars">
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">69.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="view-all-wrapper">
+          <a href="/ga-ran" class="view-all-btn">
+            Xem tất cả
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tab Burger -->
+      <div class="tab-content" id="burger">
+        <div class="products-grid">
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-3-7908cd6a-7ae2-44bf-8064-24e41506895d-2e15fa87-0ad3-4cd5-b208-db184be0c7b8.jpg?v=1742360902203" alt="Burger Zinger" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Burger Zinger</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">65.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+           <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-2-cd4df5fe-b2df-499c-9f3b-4044af4d7365-6bc974a4-78c7-4dfe-a3c4-a76f9b86d825.jpg?v=1742360901280" alt="Burger Zinger" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Burger Zinger</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">65.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+           <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-1-e343dbd4-2dae-4dc3-99da-a9b388809ab3.jpg?v=1742360900393" alt="Burger Zinger" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Burger Zinger</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">65.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+           <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-4-ea892531-d9af-42f1-b66b-91503a7e4a31.jpg?v=1742360884383" alt="Burger Zinger" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Burger Zinger</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">65.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+           <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-5-9d023646-d678-4a12-99f1-a4a00b55bf2d.jpg?v=1742376004553" alt="Burger Zinger" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Burger Zinger</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star empty">★</span>
+              </div>
+              <div class="product-price">65.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+           
+        </div>
+
+        <div class="view-all-wrapper">
+          <a href="/burger" class="view-all-btn">
+            Xem tất cả
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tab Pizza -->
+      <div class="tab-content" id="pizza">
+        <div class="products-grid">
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/productimage1-e0caebe2-dade-4ba7-8bfa-c5d0abfff8e6.jpg?v=1742376524117" alt="Pizza Hải Sản" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Pizza Hải Sản</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="product-price">189.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/productimage1.jpg?v=1742360889867" alt="Pizza Hải Sản" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Pizza Hải Sản</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="product-price">189.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-3.jpg?v=1742360888790" alt="Pizza Hải Sản" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Pizza Hải Sản</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="product-price">189.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-7.jpg?v=1742360887900" alt="Pizza Hải Sản" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Pizza Hải Sản</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="product-price">189.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image.jpg?v=1742360887037" alt="Pizza Hải Sản" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Pizza Hải Sản</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="product-price">189.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-2.jpg?v=1742360886113" alt="Pizza Hải Sản" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Pizza Hải Sản</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="product-price">189.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+          <div class="product-card-horizontal">
+            <div class="product-image-wrapper">
+              <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-2-a06bd9c4-d448-4cfe-830d-d34ac991e953-445f8346-2277-426a-acb2-5ef6719aa72d.jpg?v=1742375756883" alt="Pizza Hải Sản" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Pizza Hải Sản</div>
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="product-price">189.000₫</div>
+            </div>
+            <div class="product-action">
+              <button class="action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </button>
+              <span class="action-tooltip">Đặt ngay</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-all-wrapper">
+          <a href="/pizza" class="view-all-btn">
+            Xem tất cả
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section-banner-3">
+  <div class="container">
+    
+    <div class="banner-grid-wrapper">
+        
+        <a href="/collections/all" class="banner-item group">
+            <div class="banner-thumb">
+                <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/banner_group_1_1.jpg?1758547585919" 
+                     alt="Banner 1" loading="lazy">
+            </div>
+        </a>
+
+        <a href="/collections/all" class="banner-item group">
+            <div class="banner-thumb">
+                <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/banner_group_1_2.jpg?1758547585919" 
+                     alt="Banner 2" loading="lazy">
+            </div>
+        </a>
+
+        <a href="/collections/all" class="banner-item group">
+            <div class="banner-thumb">
+                <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/banner_group_1_3.jpg?1758547585919" 
+                     alt="Banner 3" loading="lazy">
+            </div>
+        </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCT BANNER GRID SECTION ===== -->
+<section class="section section-product-banner-grid">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="section-title">Chào ngày mới</h2>
+        </div>
+
+        <!-- Product Banner Grid -->
+        <div class="product-banner-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-1-9e807c8a-33f3-4edd-8d64-7195959a2e7d-998c4395-2ef2-4dd2-b33c-f1662989342e-4599d2cc-1809-4293-a7e9-155ad27a070f.jpg?v=1742375320697" alt="Gà Rán" class="product-image">
+                    <div class="product-utilities">
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span class="utility-tooltip">Xem nhanh</span>
+                        </button>
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                            </svg>
+                            <span class="utility-tooltip">So sánh</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Gà Rán (4 Miếng)</div>
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="price-wrapper">
+                        <span class="price">129.000₫</span>
+                    </div>
+                    <button class="action-btn btn-options">
+                        Tuỳ chọn
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-3-7908cd6a-7ae2-44bf-8064-24e41506895d-2e15fa87-0ad3-4cd5-b208-db184be0c7b8.jpg?v=1742360902203" alt="Gà Rán" class="product-image">
+                    <div class="product-utilities">
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span class="utility-tooltip">Xem nhanh</span>
+                        </button>
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                            </svg>
+                            <span class="utility-tooltip">So sánh</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Gà Rán (4 Miếng)</div>
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="price-wrapper">
+                        <span class="price">129.000₫</span>
+                    </div>
+                    <button class="action-btn btn-options">
+                        Tuỳ chọn
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-2-cd4df5fe-b2df-499c-9f3b-4044af4d7365-6bc974a4-78c7-4dfe-a3c4-a76f9b86d825.jpg?v=1742360901280" alt="Gà Rán" class="product-image">
+                    <div class="product-utilities">
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span class="utility-tooltip">Xem nhanh</span>
+                        </button>
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                            </svg>
+                            <span class="utility-tooltip">So sánh</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Gà Rán (4 Miếng)</div>
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="price-wrapper">
+                        <span class="price">129.000₫</span>
+                    </div>
+                    <button class="action-btn btn-options">
+                        Tuỳ chọn
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-1-e343dbd4-2dae-4dc3-99da-a9b388809ab3.jpg?v=1742360900393" alt="Gà Rán" class="product-image">
+                    <div class="product-utilities">
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span class="utility-tooltip">Xem nhanh</span>
+                        </button>
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                            </svg>
+                            <span class="utility-tooltip">So sánh</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Gà Rán (4 Miếng)</div>
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="price-wrapper">
+                        <span class="price">129.000₫</span>
+                    </div>
+                    <button class="action-btn btn-options">
+                        Tuỳ chọn
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-3-cf404410-9ec2-4870-9355-a268b620eeb2-d3bcd366-3833-4f9b-9de7-de3143e54fc8.jpg?v=1742375172937" alt="Gà Rán" class="product-image">
+                    <div class="product-utilities">
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span class="utility-tooltip">Xem nhanh</span>
+                        </button>
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                            </svg>
+                            <span class="utility-tooltip">So sánh</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Gà Rán (4 Miếng)</div>
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="price-wrapper">
+                        <span class="price">129.000₫</span>
+                    </div>
+                    <button class="action-btn btn-options">
+                        Tuỳ chọn
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-2-f34fba32-8b1d-4b01-818a-d280bdf121a9-65b43b94-e9a6-4115-9b2e-df96fd8b3eba.jpg?v=1742375186680" alt="Gà Rán" class="product-image">
+                    <div class="product-utilities">
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span class="utility-tooltip">Xem nhanh</span>
+                        </button>
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                            </svg>
+                            <span class="utility-tooltip">So sánh</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Gà Rán (4 Miếng)</div>
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="price-wrapper">
+                        <span class="price">129.000₫</span>
+                    </div>
+                    <button class="action-btn btn-options">
+                        Tuỳ chọn
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-1-d59e6b72-8574-4588-a613-3eaaf1117156-3debc40c-b6f1-4ede-bd4a-e6498eba041d.jpg?v=1742375193733" alt="Gà Rán" class="product-image">
+                    <div class="product-utilities">
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span class="utility-tooltip">Xem nhanh</span>
+                        </button>
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                            </svg>
+                            <span class="utility-tooltip">So sánh</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Gà Rán (4 Miếng)</div>
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="price-wrapper">
+                        <span class="price">129.000₫</span>
+                    </div>
+                    <button class="action-btn btn-options">
+                        Tuỳ chọn
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-4-17c0e1c1-9c42-47bc-8541-c0a2d7846848-a0072305-8270-4aa9-8d55-2b8bec87bb6a.jpg?v=1742371688393" alt="Gà Rán" class="product-image">
+                    <div class="product-utilities">
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span class="utility-tooltip">Xem nhanh</span>
+                        </button>
+                        <button class="utility-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                            </svg>
+                            <span class="utility-tooltip">So sánh</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Gà Rán (4 Miếng)</div>
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="price-wrapper">
+                        <span class="price">129.000₫</span>
+                    </div>
+                    <button class="action-btn btn-options">
+                        Tuỳ chọn
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Banner Area -->
+            <div class="banner-area">
+                <div class="banner-sticky-wrapper">
+                <a href="/collections/all">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/559/903/themes/1004156/assets/product_banner_1_img_1.jpg?1758547585919" alt="Banner Deal">
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="view-all-wrapper">
+            <a href="/san-pham-noi-bat" class="view-all-btn">
+                Xem tất cả
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section-banner-duo">
+  <div class="container">
+    
+    <div class="banner-duo-wrapper">
+        
+        <a href="/collections/all" class="banner-duo-item group">
+            <div class="banner-thumb">
+                <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/banner_group_2_1.jpg?1758547585919" 
+                     alt="Banner Group 1" loading="lazy">
+            </div>
+        </a>
+
+        <a href="/collections/all" class="banner-duo-item group">
+            <div class="banner-thumb">
+                <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/banner_group_2_2.jpg?1758547585919" 
+                     alt="Banner Group 2" loading="lazy">
+            </div>
+        </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-product-detail">
+    <div class="container">
+        <div class="section-detail">
+            
+            <div class="pd-layout">
+                <div class="pd-gallery">
+                    <img src="//bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-2-a06bd9c4-d448-4cfe-830d-d34ac991e953-445f8346-2277-426a-acb2-5ef6719aa72d.jpg?v=1742375756883" alt="Combo C Pizza Gà">
+                </div>
+
+                <div class="pd-info">
+                    <h1 class="pd-title">Combo C (1 người) (1 miếng gà + 1 pizza hải sản S + 1 phần khoai tây chiên lớn + 1 chai coca 390ml)</h1>
+                    
+                    <div class="pd-meta">
+                        <div class="pd-stars">
+                            ★★★★★ <span style="color:#999; font-size:12px; font-weight:normal">(Chưa có đánh giá)</span>
+                        </div>
+                        <div class="pd-meta-item">Thương hiệu: <span>Đang cập nhật</span></div>
+                        <div class="pd-meta-item">Mã SP: <span>Đang cập nhật</span></div>
+                    </div>
+
+                    <div class="pd-stock-status">
+                        Trạng thái: <span class="pd-text-green">✓ Sẵn trong kho</span>
+                    </div>
+
+                    <div class="pd-price">159.000₫</div>
+
+                    <div class="pd-form">
+                        <div class="pd-form-group">
+                            <label class="pd-label">Ghi chú cho món ăn</label>
+                            <input type="text" class="pd-input" placeholder="Ví dụ: Không cay, nhiều tương...">
+                        </div>
+
+                        <div class="pd-form-group pd-quantity-group">
+                            <span class="pd-label" style="margin-bottom:0; width: 80px;">Số lượng</span>
+                            <div class="pd-qty-wrapper">
+                                <button type="button" class="pd-qty-btn" onclick="this.nextElementSibling.stepDown()">-</button>
+                                <input type="number" class="pd-qty-input" value="1" min="1">
+                                <button type="button" class="pd-qty-btn" onclick="this.previousElementSibling.stepUp()">+</button>
+                            </div>
+                        </div>
+
+                        <div class="pd-delivery-partners">
+                            <span class="pd-delivery-title">Chúng tôi cũng có mặt trên:</span>
+                            <a href="#" class="pd-app-icon"><img src="//bizweb.dktcdn.net/thumb/medium/100/559/903/themes/1004156/assets/delivery_app_1_image.png" alt="ShopeeFood"></a>
+                            <a href="#" class="pd-app-icon"><img src="//bizweb.dktcdn.net/thumb/medium/100/559/903/themes/1004156/assets/delivery_app_2_image.png" alt="GrabFood"></a>
+                            <a href="#" class="pd-app-icon"><img src="//bizweb.dktcdn.net/thumb/medium/100/559/903/themes/1004156/assets/delivery_app_3_image.png" alt="BeFood"></a>
+                        </div>
+
+                        <div class="pd-actions">
+                            <button type="submit" class="pd-btn pd-btn-add">Thêm vào giỏ</button>
+                            <button type="button" class="pd-btn pd-btn-buy">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section section-brand">
+    <div class="container">
+        
+        <div class="heading-bar">
+            <h2 class="heading">Nhà cung cấp uy tín</h2>
+        </div>
+
+        <div class="brand-slider-wrapper">
+            
+            <button class="brand-nav-btn brand-prev" id="brandPrevBtn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="brand-track" id="brandTrack">
+                
+                <div class="brand-item">
+                    <a href="/collections/all" title="CocaCola">
+                        <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/brand_1.png?1758547585919" alt="CocaCola">
+                    </a>
+                </div>
+
+                <div class="brand-item">
+                    <a href="/collections/all" title="Dalat Milk">
+                        <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/brand_2.png?1758547585919" alt="Dalat Milk">
+                    </a>
+                </div>
+
+                <div class="brand-item">
+                    <a href="/collections/all" title="CP">
+                        <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/brand_3.png?1758547585919" alt="CP">
+                    </a>
+                </div>
+
+                <div class="brand-item">
+                    <a href="/collections/all" title="Maggi">
+                        <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/brand_4.png?1758547585919" alt="Maggi">
+                    </a>
+                </div>
+
+                <div class="brand-item">
+                    <a href="/collections/all" title="Kamereo">
+                        <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/brand_5.png?1758547585919" alt="Kamereo">
+                    </a>
+                </div>
+
+                <div class="brand-item">
+                    <a href="/collections/all" title="Ajinomoto">
+                        <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/brand_6.png?1758547585919" alt="Ajinomoto">
+                    </a>
+                </div>
+
+                <div class="brand-item">
+                    <a href="/collections/all" title="Cholimex">
+                        <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/brand_7.png?1758547585919" alt="Cholimex">
+                    </a>
+                </div>
+
+                <div class="brand-item">
+                    <a href="/collections/all" title="Chin-su">
+                        <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/brand_8.png?1758547585919" alt="Chin-su">
+                    </a>
+                </div>
+
+                <div class="brand-item">
+                    <a href="/collections/all" title="Chin-su">
+                        <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/brand_9.png?1758547585919" alt="Chin-su">
+                    </a>
+                </div>
+
+                <div class="brand-item">
+                    <a href="/collections/all" title="Chin-su">
+                        <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/brand_10.png?1758547585919" alt="Chin-su">
+                    </a>
+                </div>
+
+            </div>
+
+            <button class="brand-nav-btn brand-next" id="brandNextBtn">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="brand-dots" id="brandDots">
+                <div class="brand-dot active"></div>
+                <div class="brand-dot"></div>
+                <div class="brand-dot"></div>
+                <div class="brand-dot"></div>
+                <div class="brand-dot"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section section-blogs">
+    <div class="container">
+        
+        <div class="heading-bar">
+            <h2 class="heading">
+                <a href="/tin-tuc" title="Bảng tin khuyến mãi">Bảng tin khuyến mãi</a>
+            </h2>
+        </div>
+
+        <div class="blog-grid">
+            
+            <div class="blog-card">
+                <div class="blog-image">
+                    <a href="/ngay-hoi-tin-do-an-vat-giam-gia-dac-biet-cho-cac-mon-chien-gion" title="Ngày hội tín đồ ăn vặt">
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/559/903/articles/gemini-generated-image-3hee3o3hee3o3hee.jpeg?v=1742829918027" alt="Ngày hội tín đồ ăn vặt" loading="lazy">
+                    </a>
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">
+                        <a href="/ngay-hoi-tin-do-an-vat-giam-gia-dac-biet-cho-cac-mon-chien-gion">Ngày hội tín đồ ăn vặt: Giảm giá đặc biệt cho các món chiên giòn</a>
+                    </h3>
+                    <p class="blog-desc">Bạn là fan của đồ chiên giòn rụm, thơm ngon? Vậy thì tin vui dành cho bạn đây! Chúng tôi đang tổ chức ngày hội...</p>
+                    <div class="blog-footer">
+                        <div class="blog-date">
+                            <i class="fa-regular fa-calendar"></i> 24/03/2025
+                        </div>
+                        <a href="/ngay-hoi-tin-do-an-vat-giam-gia-dac-biet-cho-cac-mon-chien-gion" class="btn-read-more">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <a href="/thu-2-day-nang-luong-uu-dai-dac-biet-cho-bua-sang-nhanh-gon" title="Thứ 2 đầy năng lượng">
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/559/903/articles/openart-image-sllb02eb-1742829435729-raw.jpg?v=1742829457583" alt="Thứ 2 đầy năng lượng" loading="lazy">
+                    </a>
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">
+                        <a href="/thu-2-day-nang-luong-uu-dai-dac-biet-cho-bua-sang-nhanh-gon">Thứ 2 đầy năng lượng: Ưu đãi đặc biệt cho bữa sáng nhanh gọn</a>
+                    </h3>
+                    <p class="blog-desc">Thứ 2 luôn là ngày thử thách nhất trong tuần. Sau một cuối tuần thư giãn, việc quay lại guồng quay công việc khiến nhiều...</p>
+                    <div class="blog-footer">
+                        <div class="blog-date">
+                            <i class="fa-regular fa-calendar"></i> 24/03/2025
+                        </div>
+                        <a href="/thu-2-day-nang-luong-uu-dai-dac-biet-cho-bua-sang-nhanh-gon" class="btn-read-more">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <a href="/tiec-tung-linh-dinh-khuyen-mai-combo-pizza-va-nuoc-ngot-sieu-tiet-kiem" title="Tiệc tùng linh đình">
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/559/903/articles/openart-image-pnp4cu5c-1742828730497-raw.jpg?v=1742828748803" alt="Tiệc tùng linh đình" loading="lazy">
+                    </a>
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">
+                        <a href="/tiec-tung-linh-dinh-khuyen-mai-combo-pizza-va-nuoc-ngot-sieu-tiet-kiem">Tiệc tùng linh đình: Khuyến mãi combo pizza và nước ngọt siêu tiết kiệm</a>
+                    </h3>
+                    <p class="blog-desc">Bạn đang tìm kiếm một bữa ăn ngon lành để cùng bạn bè quây quần? Đừng bỏ lỡ khuyến mãi hot nhất tuần này! Combo...</p>
+                    <div class="blog-footer">
+                        <div class="blog-date">
+                            <i class="fa-regular fa-calendar"></i> 24/03/2025
+                        </div>
+                        <a href="/tiec-tung-linh-dinh-khuyen-mai-combo-pizza-va-nuoc-ngot-sieu-tiet-kiem" class="btn-read-more">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <a href="/deal-soc-nua-gia-thuong-thuc-mi-y-ngon-me-ly" title="Deal Sốc Nửa Giá">
+                        <img src="//bizweb.dktcdn.net/thumb/large/100/559/903/articles/openart-image-ov65bwmv-1742828389362-raw.jpg?v=1742828447317" alt="Deal Sốc Nửa Giá" loading="lazy">
+                    </a>
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">
+                        <a href="/deal-soc-nua-gia-thuong-thuc-mi-y-ngon-me-ly">Deal Sốc "Nửa Giá": Thưởng Thức Mì Ý Ngon Mê Ly</a>
+                    </h3>
+                    <p class="blog-desc">Bạn là fan của mì Ý và luôn tìm kiếm những ưu đãi hấp dẫn? Vậy thì đây chính là tin vui dành cho bạn!...</p>
+                    <div class="blog-footer">
+                        <div class="blog-date">
+                            <i class="fa-regular fa-calendar"></i> 24/03/2025
+                        </div>
+                        <a href="/deal-soc-nua-gia-thuong-thuc-mi-y-ngon-me-ly" class="btn-read-more">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="view-all-wrapper">
+            <a href="/tin-tuc" class="link-view-all">
+                Xem tất cả <i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="section-policies">
+  <div class="container">
+    
+    <div class="policy-wrapper">
+        <div class="policy-list">
+            
+            <div class="policy-item">
+                <div class="policy-icon">
+                    <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/policies_icon_1.png?1758547585919" 
+                         alt="Giao hàng" loading="lazy">
+                </div>
+                <div class="policy-content">
+                    <span class="policy-title">Giao hàng siêu tốc</span>
+                    <span class="policy-desc">Nội thành HCM chỉ trong 30 phút</span>
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-icon">
+                    <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/policies_icon_2.png?1758547585919" 
+                         alt="Đổi món" loading="lazy">
+                </div>
+                <div class="policy-content">
+                    <span class="policy-title">Đổi món dễ dàng</span>
+                    <span class="policy-desc">Miễn phí đổi món trong vòng 15 phút</span>
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-icon">
+                    <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/policies_icon_3.png?1758547585919" 
+                         alt="Hỗ trợ" loading="lazy">
+                </div>
+                <div class="policy-content">
+                    <span class="policy-title">Hỗ trợ tức thì</span>
+                    <span class="policy-desc">Hỗ trợ khách hàng 24/7</span>
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-icon">
+                    <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/policies_icon_4.png?1758547585919" 
+                         alt="Khuyến mãi" loading="lazy">
+                </div>
+                <div class="policy-content">
+                    <span class="policy-title">Deal hot bùng nổ</span>
+                    <span class="policy-desc">Giảm giá sốc mỗi ngày</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-col info-col">
+        <a href="/" class="footer-logo">
+          <img src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/logo-footer.png?1758547585919" alt="EGA Food">
+        </a>
+        <p class="company-name">EGA Food</p>
+        <p class="company-desc">Chuỗi cửa hàng đồ ăn nhanh với thực đơn đa dạng, phục vụ nhanh chóng, tiện lợi.</p>
+        <p class="company-tax">Mã số thuế: 12345678910</p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+                <span>Địa chỉ:</span>
+                <strong>70 Lu Gia, District 11, HCM</strong>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+                <span>Hotline:</span>
+                <a href="tel:19006750">1900 6750</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+                <span>Email:</span>
+                <a href="mailto:support@sapo.vn">support@sapo.vn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="#" class="social-item facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-item youtube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-item tiktok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" class="social-item instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <details class="footer-accordion" open>
+          <summary class="footer-heading">
+            Hỗ trợ khách hàng <i class="fa-solid fa-chevron-down arrow-icon"></i>
+          </summary>
+          <ul class="footer-links">
+            <li><a href="/cau-hoi-thuong-gap">Câu hỏi thường gặp</a></li>
+            <li><a href="/he-thong-cua-hang">Hệ thống cửa hàng</a></li>
+            <li><a href="/search">Tìm kiếm</a></li>
+            <li><a href="/gioi-thieu">Giới thiệu</a></li>
+            <li><a href="/lien-he">Liên hệ</a></li>
+            <li><a href="/cong-tac-vien">Cộng tác viên</a></li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="footer-col">
+        <details class="footer-accordion" open>
+          <summary class="footer-heading">
+            Chính sách <i class="fa-solid fa-chevron-down arrow-icon"></i>
+          </summary>
+          <ul class="footer-links">
+            <li><a href="/chinh-sach-doi-tra">Chính sách đổi trả</a></li>
+            <li><a href="/chinh-sach-bao-mat">Chính sách bảo mật</a></li>
+            <li><a href="/dieu-khoan">Điều khoản dịch vụ</a></li>
+          </ul>
+        </details>
+
+        <div class="hotline-box">
+            <p class="footer-heading-sm">Tổng đài hỗ trợ</p>
+            <p>Gọi mua hàng: <a href="tel:0999999999">0999 999 999</a> (8h-20h)</p>
+            <p>Gọi bảo hành: <a href="tel:19009999">1900 9999</a> (8h-20h)</p>
+        </div>
+      </div>
+
+      <div class="footer-col subscribe-col">
+        <p class="footer-heading">Đăng ký nhận ưu đãi</p>
+        <p class="subscribe-desc">Đăng ký ngay để nhận thông tin khuyến mãi mới nhất từ EGA Food.</p>
+        
+        <form class="subscribe-form">
+          <input type="email" placeholder="Nhập email của bạn..." required>
+          <button type="submit">Đăng ký</button>
+        </form>
+
+        <div class="payment-methods">
+            <p class="footer-heading-sm">Phương thức thanh toán</p>
+            <img src="//bizweb.dktcdn.net/thumb/grande/100/559/903/themes/1004156/assets/footer-trustbadge.png?1758547585919" alt="Payment">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© Bản quyền thuộc về <strong>EGANY</strong> | Cung cấp bởi <strong>Sapo</strong></p>
+    </div>
+  </div>
+</footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // --- PHẦN 1: XỬ LÝ CUỘN VÀ NÚT BẤM ---
+    const scrollContainer = document.querySelector('.navigation-horizontal-wrapper nav');
+    const btnLeft = document.getElementById('scrollLeft');
+    const btnRight = document.getElementById('scrollRight');
+
+    const updateButtons = () => {
+        if (!scrollContainer || !btnLeft || !btnRight) return;
+
+        // Tính toán xem có cần cuộn không
+        // scrollWidth: tổng độ dài nội dung
+        // clientWidth: độ rộng đang hiển thị
+        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        
+        // Nếu nội dung ngắn, nằm gọn trong khung -> Ẩn nút
+        if (maxScroll <= 0) {
+            btnLeft.style.display = 'none';
+            btnRight.style.display = 'none';
+            return; // Dừng luôn, không làm gì nữa
+        }
+
+        // Nếu nội dung dài -> LUÔN HIỆN NÚT (Sửa lại đoạn này)
+        btnLeft.style.display = 'flex';
+        btnRight.style.display = 'flex';
+
+        // Kiểm tra disable nút (làm mờ khi đến đầu/cuối)
+        // Cho sai số 2px
+        btnLeft.disabled = scrollContainer.scrollLeft <= 2;
+        btnRight.disabled = scrollContainer.scrollLeft >= maxScroll - 2;
+        
+        // Chỉnh opacity để người dùng biết nút bị vô hiệu hóa
+        btnLeft.style.opacity = btnLeft.disabled ? '0.3' : '1';
+        btnRight.style.opacity = btnRight.disabled ? '0.3' : '1';
+    };
+
+    if (scrollContainer && btnLeft && btnRight) {
+        // Sự kiện click
+        btnLeft.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        btnRight.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+
+        // Sự kiện cuộn và resize
+        scrollContainer.addEventListener('scroll', () => window.requestAnimationFrame(updateButtons));
+        window.addEventListener('resize', updateButtons);
+        
+        // Chạy ngay khi load
+        updateButtons();
+    }
+
+    // --- PHẦN 2: XỬ LÝ SUBMENU TRÀN RA NGOÀI (Code fixed position) ---
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuItems.forEach(item => {
+        const submenu = item.querySelector('.submenu');
+        const link = item.querySelector('.menu-item__link');
+
+        if (!submenu || !link) return;
+
+        item.addEventListener('mouseenter', () => {
+            const rect = link.getBoundingClientRect();
+            
+            // Chuyển sang fixed để nổi lên trên cùng
+            submenu.style.position = 'fixed';
+            submenu.style.top = `${rect.bottom}px`; 
+            
+            if (submenu.classList.contains('mega-menu')) {
+                submenu.style.left = '10%';
+                submenu.style.transform = 'translateX(-50%) translateY(0)';
+                submenu.style.width = '100%';
+                submenu.style.maxWidth = '1400px';
+            } else {
+                submenu.style.left = `${rect.left}px`;
+                submenu.style.transform = 'translateY(0)';
+                submenu.style.width = 'auto';
+                submenu.style.minWidth = '220px';
+            }
+            submenu.classList.add('is-visible');
+        });
+
+        item.addEventListener('mouseleave', () => {
+            submenu.classList.remove('is-visible');
+            // Đợi animation xong mới reset style
+            setTimeout(() => {
+                if (!item.matches(':hover')) {
+                    submenu.style.position = 'absolute';
+                    submenu.style.top = '100%';
+                    submenu.style.left = '0';
+                    submenu.style.transform = 'translateY(10px)';
+                }
+            }, 300);
+        });
+    });
+
+    // Ẩn submenu khi cuộn trang
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.submenu.is-visible').forEach(sub => {
+            sub.classList.remove('is-visible');
+            sub.style.position = 'absolute';
+        });
+    });
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.header');
+    
+    // Ngưỡng cuộn (300-400px tương đương khoảng 3-4 lần lăn chuột)
+    const SCROLL_THRESHOLD = 400; 
+
+    const handleScroll = () => {
+        if (!header) return;
+
+        const currentScroll = window.scrollY;
+
+        if (currentScroll > SCROLL_THRESHOLD) {
+            // Nếu đã cuộn sâu xuống > 400px -> Hiện Header dính
+            if (!header.classList.contains('header-sticky')) {
+                header.classList.add('header-sticky');
+            }
+        } else {
+            // Nếu đang ở đoạn đầu trang (< 400px) -> Gỡ Header dính
+            // Lúc này Header sẽ nằm im ở đầu trang web, cuộn là mất
+            header.classList.remove('header-sticky');
+        }
+    };
+
+    // Lắng nghe sự kiện cuộn
+    window.addEventListener('scroll', () => {
+        // Dùng requestAnimationFrame để tối ưu hiệu năng
+        window.requestAnimationFrame(handleScroll);
+    });
+});
+</script>
+<script>
+    var track = document.getElementById("banner-track");
+    var index = 1; // Bắt đầu ở số 1 (Vì số 0 là ảnh copy)
+    var slideWidth = 100;
+    var transitionTime = 500;
+    var isTransitioning = false; // Cờ để chặn bấm liên tục
+    var autoSlideInterval;
+
+    // Khởi tạo vị trí ban đầu (để hiện Ảnh 1 thay vì Ảnh Copy 2)
+    track.style.transform = `translate3d(-${index * slideWidth}%, 0, 0)`;
+
+    function moveSlide(direction) {
+        if (isTransitioning) return; // Nếu đang trượt thì chặn click
+        isTransitioning = true;
+        
+        // Reset thời gian tự động chạy khi bấm nút
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => moveSlide(1), 3000);
+
+        // Cập nhật index
+        index += direction;
+
+        // Slide mượt
+        track.style.transition = `transform ${transitionTime}ms ease-in-out`;
+        track.style.transform = `translate3d(-${index * slideWidth}%, 0, 0)`;
+
+        // Xử lý vòng lặp khi trượt xong
+        setTimeout(() => {
+            // 1. Nếu đi quá đà sang phải (đến bản copy cuối)
+            if (index === 3) {
+                track.style.transition = "none"; // Tắt hiệu ứng
+                index = 1; // Nhảy về ảnh gốc 1
+                track.style.transform = `translate3d(-${index * slideWidth}%, 0, 0)`;
+            }
+            // 2. Nếu đi lùi quá đà sang trái (đến bản copy đầu)
+            else if (index === 0) {
+                track.style.transition = "none"; // Tắt hiệu ứng
+                index = 2; // Nhảy về ảnh gốc 2
+                track.style.transform = `translate3d(-${index * slideWidth}%, 0, 0)`;
+            }
+            
+            isTransitioning = false; // Mở khóa cho lần bấm tiếp theo
+        }, transitionTime);
+    }
+
+    // Tự động chạy (Mặc định hướng sang phải: 1)
+    autoSlideInterval = setInterval(() => moveSlide(1), 3000);
+</script>
+<script>
+    // Flash Sale Countdown Timer
+document.addEventListener('DOMContentLoaded', () => {
+    function updateCountdown() {
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        
+        if (!hoursEl || !minutesEl || !secondsEl) return;
+        
+        let hours = parseInt(hoursEl.textContent);
+        let minutes = parseInt(minutesEl.textContent);
+        let seconds = parseInt(secondsEl.textContent);
+        
+        seconds--;
+        
+        if (seconds < 0) {
+            seconds = 59;
+            minutes--;
+        }
+        
+        if (minutes < 0) {
+            minutes = 59;
+            hours--;
+        }
+        
+        if (hours < 0) {
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+        }
+        
+        hoursEl.textContent = hours.toString().padStart(2, '0');
+        minutesEl.textContent = minutes.toString().padStart(2, '0');
+        secondsEl.textContent = seconds.toString().padStart(2, '0');
+    }
+    
+    setInterval(updateCountdown, 1000);
+
+    // Button handlers
+    document.querySelectorAll('.action-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+            alert('Đã thêm ' + productName + ' vào giỏ hàng!');
+        });
+    });
+
+    // Utility buttons handlers
+    document.querySelectorAll('.utility-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+            const action = this.title;
+            alert(action + ': ' + productName);
+        });
+    });
+});
+</script>
+<script>
+    // Product Tabs Functionality - SCOPED
+document.addEventListener('DOMContentLoaded', () => {
+    // Chỉ chọn tab buttons trong section-product-tabs
+    const productTabsSection = document.querySelector('.section-product-tabs');
+    if (!productTabsSection) return;
+
+    const tabButtons = productTabsSection.querySelectorAll('.tab-btn');
+    const tabContents = productTabsSection.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.dataset.tab;
+
+            // Remove active class
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Add active class
+            button.classList.add('active');
+            productTabsSection.querySelector('#' + targetTab).classList.add('active');
+        });
+    });
+
+    // Action button handlers - chỉ trong section này
+    productTabsSection.querySelectorAll('.action-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const productName = this.closest('.product-card-horizontal').querySelector('.product-name').textContent;
+            alert('Đã thêm ' + productName + ' vào giỏ hàng!');
+        });
+    });
+});
+</script>
+<script>
+// Product Banner Grid - Complete JavaScript (SCOPED)
+(function() {
+    const section = document.querySelector('.section-product-banner-grid');
+    if (!section) return;
+
+    // Action button handlers
+    section.querySelectorAll('.action-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+            alert('Đã thêm ' + productName + ' vào giỏ hàng!');
+        });
+    });
+
+    // Utility button handlers
+    section.querySelectorAll('.utility-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+            const tooltipText = this.querySelector('.utility-tooltip').textContent;
+            alert(tooltipText + ': ' + productName);
+        });
+    });
+
+    // Sticky Banner Scroll Effect
+    const bannerArea = section.querySelector('.banner-area');
+    const bannerWrapper = section.querySelector('.banner-sticky-wrapper');
+    const productGrid = section.querySelector('.product-banner-grid');
+    
+    if (bannerArea && bannerWrapper && productGrid) {
+        function updateBannerPosition() {
+            // Get all necessary measurements
+            const gridRect = productGrid.getBoundingClientRect();
+            const bannerRect = bannerArea.getBoundingClientRect();
+            const wrapperHeight = bannerWrapper.offsetHeight;
+            
+            // Calculate positions relative to viewport
+            const bannerTop = bannerRect.top;
+            const gridBottom = gridRect.bottom;
+            
+            // Check if banner should stop scrolling
+            // Stop when banner bottom reaches grid bottom
+            const shouldStop = (bannerTop + wrapperHeight) >= gridBottom - 20;
+            
+            if (shouldStop && gridRect.top < 0) {
+                // Banner reached bottom of grid - make it absolute
+                bannerWrapper.style.position = 'absolute';
+                bannerWrapper.style.top = 'auto';
+                bannerWrapper.style.bottom = '0';
+            } else {
+                // Banner is sticky and follows scroll
+                bannerWrapper.style.position = 'sticky';
+                bannerWrapper.style.top = '20px';
+                bannerWrapper.style.bottom = 'auto';
+            }
+        }
+        
+        // Update on scroll with requestAnimationFrame for performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateBannerPosition();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+        
+        // Update on window resize
+        window.addEventListener('resize', updateBannerPosition);
+        
+        // Initial update after a short delay to ensure layout is ready
+        setTimeout(updateBannerPosition, 100);
+    }
+})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('brandTrack');
+    const prevBtn = document.getElementById('brandPrevBtn');
+    const nextBtn = document.getElementById('brandNextBtn');
+    const dots = document.querySelectorAll('.brand-dot');
+
+    // Cấu hình
+    const itemWidth = 210; // 180px width + 30px gap
+    let autoPlayInterval;
+
+    // Hàm cuộn
+    const scrollBrand = (direction) => {
+        if (direction === 'left') {
+            track.scrollLeft -= itemWidth;
+        } else {
+            // Kiểm tra nếu đã cuộn đến cuối thì quay về đầu (Infinite loop giả lập)
+            if (track.scrollLeft >= (track.scrollWidth - track.clientWidth - 10)) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollLeft += itemWidth;
+            }
+        }
+        updateActiveDot();
+    };
+
+    // Sự kiện Click
+    prevBtn.addEventListener('click', () => {
+        scrollBrand('left');
+        resetAutoPlay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        scrollBrand('right');
+        resetAutoPlay();
+    });
+
+    // Auto Play Function
+    const startAutoPlay = () => {
+        autoPlayInterval = setInterval(() => {
+            scrollBrand('right');
+        }, 3000); // 3 giây tự chạy
+    };
+
+    const resetAutoPlay = () => {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    };
+
+    // Stop AutoPlay khi hover chuột vào
+    track.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    track.addEventListener('mouseleave', startAutoPlay);
+
+    // Cập nhật Dot Active (đơn giản hóa theo vị trí scroll)
+    const updateActiveDot = () => {
+        const scrollPercentage = track.scrollLeft / (track.scrollWidth - track.clientWidth);
+        const activeIndex = Math.round(scrollPercentage * (dots.length - 1));
+        
+        dots.forEach((dot, index) => {
+            if (index === activeIndex) dot.classList.add('active');
+            else dot.classList.remove('active');
+        });
+    };
+
+    // Lắng nghe sự kiện scroll để cập nhật dot (cho cả trường hợp vuốt tay)
+    track.addEventListener('scroll', updateActiveDot);
+
+    // Khởi chạy
+    startAutoPlay();
+});
+</script>
+
+<!-- ===== FLOATING CONTACT BUTTON ===== -->
+<div id="floatingContactBtn" class="floating-btn-container">
+    <!-- Nút chính -->
+    <button id="mainFloatingBtn" class="floating-btn-main" title="Liên hệ">
+        <i class="fa-solid fa-headset"></i>
+    </button>
+
+    <!-- Nút đóng (X) - ẩn ban đầu -->
+    <button id="closeFloatingBtn" class="floating-btn-close" style="display: none;" title="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <!-- Container chứa các nút con -->
+    <div id="floatingSubMenu" class="floating-sub-menu">
+        <!-- Nút gọi điện -->
+        <a href="tel:0900123456" class="floating-sub-btn" title="Gọi điện">
+            <img class="img-fluid" src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/addthis-phone.svg?1758547585919" alt="Gọi ngay cho chúng tôi" loading="lazy" width="44" height="44" >
+            <span class="floating-tooltip">Gọi điện</span>
+        </a>
+
+        <!-- Nút Zalo -->
+        <a href="https://zalo.me/0900123456" target="_blank" class="floating-sub-btn" title="Zalo">
+            <img class="img-fluid" src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/addthis-zalo.svg?1758547585919" alt="Chat với chúng tôi qua Zalo" loading="lazy" width="44" height="44" >
+            <span class="floating-tooltip">Zalo</span>
+        </a>
+
+        <!-- Nút Messenger -->
+        <a href="https://m.me/egafood" target="_blank" class="floating-sub-btn" title="Messenger">
+           <img class="img-fluid" src="//bizweb.dktcdn.net/100/559/903/themes/1004156/assets/addthis-messenger.svg?1758547585919" alt="Chat với chúng tôi qua Messenger" loading="lazy" width="44" height="44" >
+            <span class="floating-tooltip">Messenger</span>
+        </a>
+    </div>
+</div>
+
+<script>
+    // ===== FLOATING CONTACT BUTTON JAVASCRIPT =====
+    document.addEventListener('DOMContentLoaded', () => {
+        const mainBtn = document.getElementById('mainFloatingBtn');
+        const closeBtn = document.getElementById('closeFloatingBtn');
+        const subMenu = document.getElementById('floatingSubMenu');
+
+        // Mở menu khi click nút chính
+        mainBtn.addEventListener('click', () => {
+            // Hiện menu
+            subMenu.classList.add('active');
+            
+            // Ẩn nút chính, hiện nút đóng
+            mainBtn.style.display = 'none';
+            closeBtn.style.display = 'flex';
+        });
+
+        // Đóng menu khi click nút X
+        closeBtn.addEventListener('click', () => {
+            // Ẩn menu
+            subMenu.classList.remove('active');
+            
+            // Hiện nút chính, ẩn nút đóng
+            closeBtn.style.display = 'none';
+            mainBtn.style.display = 'flex';
+        });
+
+        // Đóng menu khi click vào nút con (optional - nếu muốn tự động đóng)
+        document.querySelectorAll('.floating-sub-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Delay một chút để animation hoàn thành
+                setTimeout(() => {
+                    subMenu.classList.remove('active');
+                    closeBtn.style.display = 'none';
+                    mainBtn.style.display = 'flex';
+                }, 300);
+            });
+        });
+    });
+</script>
+
+<!-- ===== NOTIFICATION POPUP ===== -->
+<!-- Icon Chuông -->
+<div id="notificationBell" class="notification-bell" title="Xem thông báo">
+    <i class="fa-solid fa-bell"></i>
+    <span class="notification-badge">3</span>
+</div>
+
+<!-- Notification Popup -->
+<div id="notificationPopup" class="notification-popup">
+    <button id="closeNotificationBtn" class="notification-close-btn" title="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="notification-content">
+        <div class="notification-product-img">
+            <img src="https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-2-a06bd9c4-d448-4cfe-830d-d34ac991e953-445f8346-2277-426a-acb2-5ef6719aa72d.jpg?v=1742375756883" alt="Sản phẩm">
+        </div>
+
+        <div class="notification-info">
+            <p class="notification-label">
+                <strong id="customerName">Nguyễn Văn A</strong> vừa mua
+            </p>
+            <h4 class="notification-product-name" id="productName">Pizza Hải Sản (S)</h4>
+            <p class="notification-time" id="purchaseTime">2 phút trước</p>
+        </div>
+    </div>
+
+    <div class="notification-footer">
+        <p style="font-size: 12px; color: #999; margin: 0;">
+            Còn <strong id="remainingCount">5</strong> khách hàng khác cũng mua sản phẩm này hôm nay
+        </p>
+    </div>
+</div>
+
+<script>
+    // ===== NOTIFICATION POPUP JAVASCRIPT =====
+    document.addEventListener('DOMContentLoaded', () => {
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationPopup = document.getElementById('notificationPopup');
+        const closeNotificationBtn = document.getElementById('closeNotificationBtn');
+
+        // Mảng dữ liệu mẫu cho các thông báo
+        const notifications = [
+            {
+                customer: 'Trần Thị Diệu',
+                product: 'Gà Rán (4 Miếng)',
+                image: 'https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-1-9e807c8a-33f3-4edd-8d64-7195959a2e7d-998c4395-2ef2-4dd2-b33c-f1662989342e-4599d2cc-1809-4293-a7e9-155ad27a070f.jpg?v=1742375320697',
+                remaining: 12
+            },
+            {
+                customer: 'Lê Văn Cam',
+                product: 'Pizza Hải Sản (S)',
+                image: 'https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/productimage1-e0caebe2-dade-4ba7-8bfa-c5d0abfff8e6.jpg?v=1742376524117',
+                remaining: 8
+            },
+            {
+                customer: 'Phạm Thị Duyên',
+                product: 'Burger Zinger',
+                image: 'https://bizweb.dktcdn.net/thumb/grande/100/559/903/products/product-image-3-7908cd6a-7ae2-44bf-8064-24e41506895d-2e15fa87-0ad3-4cd5-b208-db184be0c7b8.jpg?v=1742360902203',
+                remaining: 15
+            }
+        ];
+
+        let currentNotificationIndex = 0;
+        let autoShowTimer;
+        let hideTimer;
+
+        // Hàm cập nhật nội dung popup
+        const updateNotificationContent = (index) => {
+            const notification = notifications[index];
+            document.getElementById('customerName').textContent = notification.customer;
+            document.getElementById('productName').textContent = notification.product;
+            document.querySelector('.notification-product-img img').src = notification.image;
+            document.getElementById('remainingCount').textContent = notification.remaining;
+            
+            // Cập nhật thời gian (giả lập: 1-5 phút trước)
+            const minutes = Math.floor(Math.random() * 5) + 1;
+            document.getElementById('purchaseTime').textContent = `${minutes} phút trước`;
+        };
+
+        // Hàm hiện popup
+        const showNotification = () => {
+            notificationPopup.classList.add('active');
+
+            // Tự động ẩn sau 6 giây
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                hideNotification();
+            }, 6000);
+        };
+
+        // Hàm ẩn popup
+        const hideNotification = () => {
+            notificationPopup.classList.remove('active');
+            clearTimeout(hideTimer);
+        };
+
+        // Click icon chuông -> hiện popup
+        notificationBell.addEventListener('click', () => {
+            // Lặp qua các thông báo
+            currentNotificationIndex = (currentNotificationIndex + 1) % notifications.length;
+            updateNotificationContent(currentNotificationIndex);
+            showNotification();
+        });
+
+        // Click nút đóng -> ẩn popup
+        closeNotificationBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            hideNotification();
+        });
+
+        // Tự động hiện popup khi load trang
+        updateNotificationContent(currentNotificationIndex);
+        setTimeout(() => {
+            showNotification();
+            
+            // Sau đó, cứ 15 giây hiện một popup mới (nếu user không tương tác)
+            setInterval(() => {
+                if (!notificationPopup.classList.contains('active')) {
+                    currentNotificationIndex = (currentNotificationIndex + 1) % notifications.length;
+                    updateNotificationContent(currentNotificationIndex);
+                    showNotification();
+                }
+            }, 15000);
+        }, 1500); // Delay 1.5s để trang load xong
+    });
+</script>
+
+<!-- ===== SCROLL TO TOP BUTTON ===== -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" title="Lên đầu trang">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<style>
+   
+</style>
+
+<script>
+    // ===== SCROLL TO TOP BUTTON JAVASCRIPT =====
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Ngưỡng hiển thị nút (300px)
+        const SCROLL_THRESHOLD = 300;
+
+        // Hàm cập nhật trạng thái nút
+        const updateScrollToTopBtn = () => {
+            if (window.scrollY > SCROLL_THRESHOLD) {
+                // Nếu đã cuộn > 300px -> Hiện nút
+                scrollToTopBtn.classList.add('show');
+            } else {
+                // Nếu chưa cuộn đủ -> Ẩn nút
+                scrollToTopBtn.classList.remove('show');
+            }
+        };
+
+        // Lắng nghe sự kiện scroll
+        window.addEventListener('scroll', () => {
+            // Dùng requestAnimationFrame để tối ưu hiệu năng
+            window.requestAnimationFrame(updateScrollToTopBtn);
+        });
+
+        // Click nút -> Cuộn mượt về đầu trang
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Animation cuộn mượt
+            });
+        });
+
+        // Cập nhật ngay khi load trang
+        updateScrollToTopBtn();
+    });
+</script>
+
+</body>
+</html>
